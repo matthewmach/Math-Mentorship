@@ -15,52 +15,49 @@ int choose(int a, int b){
     return answer;
 }   
 
-void gen (int index, string cur, int end, int n){
+void gen (int index, string cur, int end){
     if (index >= end)
         combo.push_back(cur);
     else{
-        for (int x=0; x<n; x++){
-            char c = x+'0';
-            gen (index+1, cur + c, end, n);
-        }
+        gen (index+1, cur + '0', end);
+        gen (index+1, cur + '1', end);
+        gen (index+1, cur + '2', end);
+        gen (index+1, cur + '3', end);
     }
 }
 
 int main() {
-    int n, h, walks=0, count=0;
-    cout << "Number of options: ";
-    cin >> n;
+    int h, walks=0, count=0;
     cout << "Number of steps: ";
     cin >> h;
 
-    gen (0, "", h, n);
+    gen (0, "", h);
     
     cout << endl << "Winning Walks:" << endl;
 
     for (int x=0; x<combo.size(); x++){
-        int location=0, y=0;
+        int locationx=0, locationy=0, y=0;
         while (y<h){
-            if (combo[x][y] == '0') //0 is back
-                location--;
-            else
-                location++;
+            if (combo[x][y] == '0') //0 is N
+                locationx++;
+            else if (combo[x][y] == '2') //2 is S
+                locationx--;
+            else if (combo[x][y] == '1') //1 is E
+                locationy++;
+            else //4 is W
+                locationy--;
             y++;
         } 
-        if (location == 0){
+        if (locationx == 0 && locationy == 0){
             walks++;
             cout << combo[x] << endl;
         }
     }
     
     cout << endl << "Number of winning walks: " << walks << endl;
-    
-    int denom = pow(n, h);
-    if (h % 2 != 0)
-        cout << "Formula: 0/" << denom;
-    else{
-        int formula = pow (n-1, h/2) * choose (h, h/2);
-        cout << "Formula: " << formula << "/" << denom << endl;
-    }
+
+    // int formula = pow (n-1, h/2) * choose (h, h/2), denom = pow(n, k);
+    // cout << "Formula: " << formula << "/" << denom << endl;
     cout << "Probability of winning walk: " << walks << "/" << combo.size() << " = " << fixed << showpoint << setprecision(5) << (double)walks/(double)combo.size() << endl;
     return 0;
 }
