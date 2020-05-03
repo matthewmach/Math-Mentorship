@@ -8,7 +8,8 @@ The Drunkard's Walk is a random walk on ![\mathbb{Z}](https://render.githubuserc
 
 > What's the probablility of the drunkard reaching his house in n steps?
 
-This question is quite easy. First, note ![n](https://render.githubusercontent.com/render/math?math=n) must be the same parity of ![h](https://render.githubusercontent.com/render/math?math=h). Assuming ![h](https://render.githubusercontent.com/render/math?math=h)(it won't matter in the end), then we know that there are ![h+k](https://render.githubusercontent.com/render/math?math=h%2Bk) steps forward and ![k](https://render.githubusercontent.com/render/math?math=k) steps backward with ![k=\frac{n-h}{2}](https://render.githubusercontent.com/render/math?math=k%3D%5Cfrac%7Bn-h%7D%7B2%7D). Thus, the formula is:
+This question is quite easy. First, note ![n](https://render.githubusercontent.com/render/math?math=n) must be the same parity of ![h](https://render.githubusercontent.com/render/math?math=h). Assuming ![h](https://render.githubusercontent.com/render/math?math=h) is positive (it won't matter in the end), then we know that there are ![h+k](https://render.githubusercontent.com/render/math?math=h%2Bk) steps forward and ![k](https://render.githubusercontent.com/render/math?math=k) steps backward with ![k=\frac{n-h}{2}](https://render.githubusercontent.com/render/math?math=k%3D%5Cfrac%7Bn-h%7D%7B2%7D). 
+Thus, the formula is:
 
 
 > What's the probability of the drunkard passing by his house in n steps?
@@ -25,7 +26,7 @@ p(5) = 12/32 = 1/4 + 1/8
 p(6) = 29/64 = 1/4 + 1/8 + 1/16 + 1/64
 p(8) = 130/256 = 1/2 + 1/128
 ```
-Here's where coding comes in use. With DrunkardsWalk.cpp, I wrote a recursive function to bash all the possible step sequences and tested each one of them, effectively bashing all cases. Then, I compared the bashed answer to my predicted formula.
+Here's where coding comes in use. With [DrunkardsWalk.cpp](https://github.com/matthewmach/MathMentorship/blob/master/RandomWalks/DrunkardsWalk.cpp), I wrote a recursive function to bash all the possible step sequences and tested each one of them, effectively bashing all cases. Then, I compared the bashed answer to my predicted formula.
 This program allowed me to test my hypothesized formulas easily and efficiently, especially for much larger values of ![h](https://render.githubusercontent.com/render/math?math=h) and ![n](https://render.githubusercontent.com/render/math?math=n).
 Here's what the formula looks like:
 
