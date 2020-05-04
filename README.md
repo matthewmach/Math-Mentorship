@@ -11,7 +11,7 @@ The Drunkard's Walk is a random walk on ![\mathbb{Z}](https://render.githubuserc
 This question is quite easy. First, note ![n](https://render.githubusercontent.com/render/math?math=n) must be the same parity of ![h](https://render.githubusercontent.com/render/math?math=h). Assuming ![h](https://render.githubusercontent.com/render/math?math=h) is positive (it won't matter in the end), then we know that there are ![h+k](https://render.githubusercontent.com/render/math?math=h%2Bk) steps forward and ![k](https://render.githubusercontent.com/render/math?math=k) steps backward with ![k=\frac{n-h}{2}](https://render.githubusercontent.com/render/math?math=k%3D%5Cfrac%7Bn-h%7D%7B2%7D). 
 Thus, the formula is:
 
-![Image of Reach Formula](https://github.com/matthewmach/Math-Mentorship/blob/master/Images/ReachFormula.png)
+<img src="https://github.com/matthewmach/Math-Mentorship/blob/master/Images/ReachFormula.png" width="120">
 
 > What's the probability of the drunkard passing by his house in n steps?
 
